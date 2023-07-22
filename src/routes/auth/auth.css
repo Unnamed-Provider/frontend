@@ -31,3 +31,14 @@ form > div > button {
 form > div > p {
     margin-top: 1rem;
 }
+
+form > div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+form > div > div > input {
+    width: 50%;
+}

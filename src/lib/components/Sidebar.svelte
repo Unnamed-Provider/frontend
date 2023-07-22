@@ -1,29 +1,48 @@
 <script>
 	import SidebarItem from './SidebarItem.svelte';
+	import md5 from 'md5';
+
+	import { page } from '$app/stores';
 
     export let instance = {
 		name: 'Project 1',
-		id: '1',
-		open: true
+		id: 'a',
+		open: $page.url.pathname.startsWith('/@/project')
 	};
+
+	export let user = {
+		roles: ['Member'],
+		username: 'ben@dover.org',
+		names: {
+			first: 'Ben',
+			last: 'Dover'
+		},
+		avatar: "",
+		primary_role: ""
+	};
+
+
+	$: user["avatar"] = `https://www.gravatar.com/avatar/${md5(user["username"])}?d=retro`;
+	$: user["primary_role"] = user.roles[user.roles.length - 1].charAt(0).toUpperCase() + user.roles[user.roles.length - 1].slice(1);
+	
 </script>
 
 <nav>
 	<div class="user">
-		<img src="https://avatars.githubusercontent.com/u/47269252?v=4" alt="user" />
+		<img src={user.avatar} alt="avatar" />
 		<div class="user-info">
-			<h4>John Doe</h4>
-			<small>Personal</small>
+			<h4>{user.names.first} {user.names.last.charAt(0)}.</h4>
+			<small>{user.primary_role}</small>
 		</div>
 	</div>
 
 	<ul>
-		<SidebarItem href="/">Instances</SidebarItem>
+		<SidebarItem href="/@">Instances</SidebarItem>
 		{#if instance.open}
 			<li class="label">{instance.name}</li>
-			<SidebarItem href="/project/{instance.id}/overview">Overview</SidebarItem>
-			<SidebarItem href="/project/{instance.id}/files">Files</SidebarItem>
-			<SidebarItem href="/project/{instance.id}/settings">Settings</SidebarItem>
+			<SidebarItem href="/@/project/{instance.id}">Overview</SidebarItem>
+			<SidebarItem href="/@/project/{instance.id}/files">Files</SidebarItem>
+			<SidebarItem href="/@/project/{instance.id}/settings">Settings</SidebarItem>
 		{/if}
 	</ul>
 </nav>
@@ -34,6 +53,7 @@
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
+		min-width: 13rem;
 	}
 
 	.user {
@@ -55,6 +75,7 @@
 
 	.user-info h4 {
 		margin: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.user-info small {

@@ -104,3 +104,23 @@ a {
 a:hover {
     color: var(--color-primary);
 }
+
+row {
+    display: flex;
+    flex-direction: row;
+}
+
+row > * {
+    flex-grow: 1;
+}
+
+card {
+    background-color: var(--color-bg-2);
+    border-radius: 0.55rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+card > h2 {
+    margin-top: 0;
+}

@@ -1,10 +1,15 @@
 <script>
 	import Sidebar from '$lib/components/Sidebar.svelte';
+
+	/**
+	 * @type {any}
+	 */
+	export let data;
 </script>
 
 <main>
-	<Sidebar />
+	<Sidebar user={data.user} />
 	<article>
-		<slot />
+		<slot />z
 	</article>
 </main>

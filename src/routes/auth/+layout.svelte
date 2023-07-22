@@ -2,7 +2,7 @@
     import "./auth.css";
 </script>
 
-<form method="post">
+<form>
 	<div>
 		<slot />
 	</div>
