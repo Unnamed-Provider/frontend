@@ -44,3 +44,63 @@ footer {
     background-color: var(--color-bg-2);
     padding: 1rem;
 }
+
+
+input {
+    background-color: var(--color-bg-3);
+    border: 1px solid var(--color-bg-4);
+    border-radius: 0.55rem;
+    color: var(--color-text);
+    padding: 0.5rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+button {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 0.55rem;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 0.5rem;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+button:focus {
+    outline: none;
+}
+
+button:disabled {
+    background-color: var(--color-bg-3);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: var(--color-bg-3);
+}
+
+button:active {
+    background-color: var(--color-secondary);
+}
+
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-primary);
+}

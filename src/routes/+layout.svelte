@@ -1,11 +1,5 @@
 <script>
-	import './global.css';
-	import Sidebar from '$lib/components/Sidebar.svelte';
+    import "./global.css";
 </script>
 
-<main>
-	<Sidebar />
-	<article>
-		<slot />
-	</article>
-</main>
+<slot />
