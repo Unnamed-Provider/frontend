@@ -10,6 +10,6 @@
 <main>
 	<Sidebar user={data.user} />
 	<article>
-		<slot />z
+		<slot />
 	</article>
 </main>
