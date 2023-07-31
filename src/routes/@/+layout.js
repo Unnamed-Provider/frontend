@@ -12,7 +12,7 @@ export async function load({ fetch }) {
     let res = await r.json();
     
     if (res.status === "failed") {
-        throw redirect(302, '/auth/login');
+        throw redirect(302, '/auth');
     }
 
     return {

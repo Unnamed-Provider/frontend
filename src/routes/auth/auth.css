@@ -10,35 +10,35 @@ img {
     filter: blur(5px);
 }
 
-form > div > h1 {
+article > div > h1 {
     margin-bottom: 1rem;
     font-size: 3rem;
     margin-top: 0;
 }
 
-form > div > input {
+article > div > input {
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
-form > div > button {
+article > div > button {
     font-size: 1.5rem;
     display: block;
     width: 100%;
     font-weight: bold;
 }
 
-form > div > p {
+article > div > p {
     margin-top: 1rem;
 }
 
-form > div > div {
+article > div > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
 }
 
-form > div > div > input {
+article > div > div > input {
     width: 50%;
 }

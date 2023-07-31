@@ -1,4 +1,8 @@
 <script>
+
+    import { page } from "$app/stores";
+	import { onMount } from "svelte";
+
     async function register() {
         if (password !== password2) {
             alert("Passwords do not match");
@@ -29,6 +33,13 @@
     let email = "";
     let password = "";
     let password2 = '';
+
+    onMount(() => {
+		let askedEmail = $page.url.searchParams.get('email');
+		if (askedEmail) {
+			email = askedEmail;
+		}
+	});
 </script>
 
 <img src="/img/b2.svg" alt="background" />
@@ -40,4 +51,4 @@
 <input type="password" name="password" placeholder="Password" bind:value={password} />
 <input type="password" name="password2" placeholder="Confirm Password" bind:value={password2} />
 <button on:click={register}>CREATE ACCOUNT</button>
-<p>Already have an account? <a href="./login">Login</a></p>
+<p><a href="/auth">Go back</a></p>
